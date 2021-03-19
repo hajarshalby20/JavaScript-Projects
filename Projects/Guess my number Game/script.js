@@ -1,6 +1,6 @@
 'use strict';
 
-let score = document.querySelector('.score').textContent;
+let score = 20;
 let highscore = 0;
 
 const generateSecretNumber = () => {
@@ -8,7 +8,6 @@ const generateSecretNumber = () => {
 };
 
 let randomNumber = generateSecretNumber();
-console.log(randomNumber);
 
 // all functions implemtation
 const displayMessage = message => {
@@ -70,11 +69,11 @@ document.querySelector('.check').addEventListener('click', () => {
 //restart again
 document.querySelector('.again').addEventListener('click', () => {
   randomNumber = generateSecretNumber();
+  score = 20 ;
   displayMessage('Start guessing...');
   displayNumber('?');
   changeWidth('15rem');
   changeScore(20);
   changeBackgroundColor('#222');
   document.querySelector('.guess').value = '';
-  console.log(randomNumber);
 });
